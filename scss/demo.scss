@@ -1,0 +1,23 @@
+header {
+  text-align: center;
+  padding: 15rem 0;
+
+  h3 {
+    line-height: 20px;
+  }
+}
+.callout {
+  width: 100%;
+  padding: 2rem 0;
+  background: $primary-color;
+  color: $white;
+  text-align: center;
+
+  img {
+    max-width: 50px;
+    max-height: 50px;
+    display: block;
+    margin: 0 auto;
+    color: $white;
+  }
+}
