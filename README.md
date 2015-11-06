@@ -4,8 +4,10 @@ A simple starter theme using Skeleton CSS and turning into a SASS build with Gul
 
 To do list: 
 
-Incorporate bower_components
-Only include /dist folder
-Remove demo styles
-Improve gitignore
-Include livereload
+<ul>
+<li>Incorporate bower_components</li>
+<li>Only include /dist folder</li>
+<li>Remove demo styles</li>
+<li>Improve gitignore</li>
+<li>Include livereload</li>
+</ul>
