@@ -804,17 +804,42 @@ header {
   header h3 {
     line-height: 20px; }
 
-.callout {
-  width: 100%;
-  padding: 2rem 0;
-  background: #234567;
-  color: #FFFFFF;
-  text-align: center; }
-  .callout img {
-    max-width: 50px;
-    max-height: 50px;
-    display: block;
-    margin: 0 auto;
-    color: #FFFFFF; }
+.rocket {
+  max-width: 200px;
+  display: block;
+  margin: 0 7rem;
+  float: left; }
+
+.fadeInUp {
+  transition: 1s ease-in;
+  -webkit-animation-name: fadeInUp;
+  -webkit-animation-duration: 2s;
+  animation-fill-mode: forwards; }
+
+/* Keyframes
+--------------------------------- */
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, 0px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, -15%); } }
+
+@-o-keyframes animationFrames {
+  0% {
+    opacity: 0;
+    -o-transform: translate(0px, 0px); }
+  100% {
+    opacity: 1;
+    -o-transform: translate(0px, -15%); } }
+
+@-ms-keyframes animationFrames {
+  0% {
+    opacity: 0;
+    -ms-transform: translate(0px, 0px); }
+  100% {
+    opacity: 1;
+    -ms-transform: translate(0px, -15%); } }
 
 /*# sourceMappingURL=application.css.map */
