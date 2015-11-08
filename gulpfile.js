@@ -6,7 +6,20 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     maps = require('gulp-sourcemaps'),
-     del = require('del');
+     del = require('del'),
+     browserSync = require('browser-sync');
+
+ gulp.task('browser-sync', function() {
+   browserSync({
+     server: {
+        baseDir: "./"
+     }
+   });
+ });
+
+ gulp.task('bs-reload', function () {
+   browserSync.reload();
+ });
 
 gulp.task("concatScripts", function() {
     return gulp.src([
@@ -35,7 +48,7 @@ gulp.task('compileSass', function() {
       .pipe(gulp.dest('css'));
 });
 
-gulp.task('watchFiles', function() {
+gulp.task('watch', function() {
   gulp.watch('scss/**/*.scss', ['compileSass']);
   gulp.watch('js/main.js', ['concatScripts']);
 })
@@ -50,8 +63,8 @@ gulp.task("build", ['minifyScripts', 'compileSass'], function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task('serve', ['watchFiles']);
+gulp.task('serve', ['watch']);
 
-gulp.task("default", ["clean"], function() {
-  gulp.start('build');
+gulp.task("default", ["browser-sync"], function() {
+  gulp.watch("*.html", ['bs-reload']);
 });
