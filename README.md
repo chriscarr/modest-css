@@ -2,7 +2,9 @@
 
 A simple starter theme using Skeleton CSS and turning into a SASS build with Gulp.
 
-To do list: 
+Run gulp as the default task to incorporate browserSync
+
+To do list:
 
 <ul>
 <li>Incorporate bower_components</li>
