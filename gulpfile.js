@@ -62,5 +62,5 @@ gulp.task("build", ['minifyScripts', 'compileSass'], function() {
 });
 
 gulp.task("default", ["browser-sync"], function() {
-  gulp.watch("*.html", ['bs-reload']);
+  gulp.watch('*.html', 'src/scss/**/*.scss', 'src/js/main.js', reload);
 });
