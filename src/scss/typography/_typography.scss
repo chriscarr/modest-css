@@ -30,13 +30,15 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: $primary-color;
+}
 a:hover {
-  color: #0FA0CE; }
+  color: darken( $primary-color, 10% );
+}
   /* Misc
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   hr {
     margin-top: 3rem;
     margin-bottom: 3.5rem;
     border-width: 0;
-    border-top: 1px solid #E1E1E1; }
+    border-top: 1px solid $gray; }
