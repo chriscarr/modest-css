@@ -13,7 +13,11 @@ body {
   color: #333;
 }
 /* Utilities
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+––––––––––––––––––––––––––––––––––––––––––––––––––
+We are styling section to give space */
+section {
+  padding: 7rem 0;
+}
 .u-full-width {
   width: 100%;
   box-sizing: border-box; }
@@ -23,7 +27,8 @@ body {
 .u-pull-right {
   float: right; }
 .u-pull-left {
-  float: left; }
+  float: left;
+}
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

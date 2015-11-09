@@ -372,7 +372,11 @@ body {
   color: #333; }
 
 /* Utilities
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+––––––––––––––––––––––––––––––––––––––––––––––––––
+We are styling section to give space */
+section {
+  padding: 7rem 0; }
+
 .u-full-width {
   width: 100%;
   box-sizing: border-box; }
@@ -576,10 +580,10 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #234567; }
+  color: #F44336; }
 
 a:hover {
-  color: #162b41; }
+  color: #ea1c0d; }
 
 /* Misc
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -587,7 +591,7 @@ hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
-  border-top: 1px solid #33c3f0; }
+  border-top: 1px solid #F3F3F3; }
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -600,8 +604,8 @@ input[type="button"] {
   height: 38px;
   padding: 0 30px;
   margin: 2rem 0;
-  color: #FFFFFF;
-  background: #4CAF50;
+  color: #333333;
+  background: #F3F3F3;
   text-align: center;
   font-size: 13px;
   font-weight: 600;
@@ -626,7 +630,7 @@ input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
   color: #333333;
-  border-color: #33c3f0;
+  border-color: #F3F3F3;
   outline: 0; }
 
 .button.button-primary,
@@ -635,8 +639,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFFFFF;
-  background-color: #33c3f0;
-  border-color: #33c3f0; }
+  background-color: #F44336;
+  border-color: #FFFFFF; }
 
 .button.button-primary:hover,
 button.button-primary:hover,
@@ -649,8 +653,12 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFFFFF;
-  background-color: #234567;
-  border-color: #234567; }
+  background-color: #F44336;
+  border-color: #F44336; }
+
+.button-secondary {
+  background-color: #4CAF50 !important;
+  color: #FFFFFF !important; }
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -667,7 +675,7 @@ select {
   padding: 6px 10px;
   /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #FFFFFF;
-  border: 1px solid #33c3f0;
+  border: 1px solid #F3F3F3;
   border-radius: 4px;
   box-shadow: none;
   box-sizing: border-box; }
@@ -699,7 +707,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #F3F3F3;
   outline: 0; }
 
 label,
@@ -746,12 +754,12 @@ li {
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
+  padding: .75rem 1.5rem;
+  margin: 0 .1rem;
   font-size: 90%;
   white-space: nowrap;
-  background: #33c3f0;
-  border: 1px solid #10aee0;
+  background: #F3F3F3;
+  border: 1px solid #d9d9d9;
   border-radius: 4px; }
 
 pre > code {
@@ -765,7 +773,7 @@ th,
 td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #33c3f0; }
+  border-bottom: 1px solid #F3F3F3; }
 
 th:first-child,
 td:first-child {

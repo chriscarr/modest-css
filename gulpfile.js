@@ -9,16 +9,6 @@ browserSync = require('browser-sync'),
     maps = require('gulp-sourcemaps'),
      del = require('del');
 
-     gulp.task('serve', ['sass'], function() {
-
-        browserSync.init({
-            server: "./"
-        });
-
-        gulp.watch("src/scss/*.scss", ['sass']);
-        gulp.watch("/*.html").on('change', browserSync.reload);
-    });
-
 gulp.task("concatScripts", function() {
     return gulp.src([
         'src/js/app.js'
@@ -40,12 +30,18 @@ gulp.task('clean', function() {
   del(['dist', 'css/application.css*', 'js/app*.js*']);
 });
 
+gulp.task('compileSass', function() {
+  return gulp.src("src/scss/application.scss")
+      .pipe(maps.init())
+      .pipe(sass())
+      .pipe(maps.write('./'))
+      .pipe(gulp.dest('dist/css'));
+});
 gulp.task("build", ['minifyScripts', 'compileSass'], function() {
-  return gulp.src(["css/application.css", "js/app.min.js", 'index.html',
+  return gulp.src(["src/css/**/*.scss", "src/js/**/*.js", 'index.html',
                    "img/**", "fonts/**"], { base: './'})
             .pipe(gulp.dest('dist'));
 });
-
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
 
@@ -65,4 +61,7 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['serve']);
+
+gulp.task("default", ["serve"], function() {
+  gulp.start('build');
+});
