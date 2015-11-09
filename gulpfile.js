@@ -1,25 +1,23 @@
 "use strict";
 
 var gulp = require('gulp'),
+browserSync = require('browser-sync'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     maps = require('gulp-sourcemaps'),
-     del = require('del'),
-     browserSync = require('browser-sync');
+     del = require('del');
 
- gulp.task('browser-sync', function() {
-   browserSync({
-     server: {
-        baseDir: "./"
-     }
-   });
- });
+     gulp.task('serve', ['sass'], function() {
 
- gulp.task('bs-reload', function () {
-   browserSync.reload();
- });
+        browserSync.init({
+            server: "./"
+        });
+
+        gulp.watch("src/scss/*.scss", ['sass']);
+        gulp.watch("/*.html").on('change', browserSync.reload);
+    });
 
 gulp.task("concatScripts", function() {
     return gulp.src([
@@ -38,19 +36,6 @@ gulp.task("minifyScripts", ["concatScripts"], function() {
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('compileSass', function() {
-  return gulp.src("src/scss/application.scss")
-      .pipe(maps.init())
-      .pipe(sass())
-      .pipe(maps.write('./'))
-      .pipe(gulp.dest('dist/css'));
-});
-
-gulp.task('watch', function() {
-  gulp.watch('src/scss/**/*.scss', ['compileSass']);
-  gulp.watch('src/js/main.js', ['concatScripts']);
-})
-
 gulp.task('clean', function() {
   del(['dist', 'css/application.css*', 'js/app*.js*']);
 });
@@ -61,6 +46,23 @@ gulp.task("build", ['minifyScripts', 'compileSass'], function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default", ["browser-sync"], function() {
-  gulp.watch('*.html', 'src/scss/**/*.scss', 'src/js/main.js', reload);
+// Static Server + watching scss/html files
+gulp.task('serve', ['sass'], function() {
+
+    browserSync.init({
+        server: "./"
+    });
+
+    gulp.watch("src/scss/**/*.scss", ['sass']);
+    gulp.watch("*.html").on('change', browserSync.reload);
 });
+
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('sass', function() {
+    return gulp.src("src/scss/**/*.scss")
+        .pipe(sass())
+        .pipe(gulp.dest("dist/css/"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('default', ['serve']);
