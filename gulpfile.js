@@ -38,7 +38,7 @@ gulp.task('compileSass', function() {
       .pipe(gulp.dest('dist/css'));
 });
 gulp.task("build", ['minifyScripts', 'compileSass'], function() {
-  return gulp.src(["src/css/**/*.scss", "src/js/**/*.js", 'index.html',
+  return gulp.src(["css/**/*.scss", "js/**/*.js",
                    "img/**", "fonts/**"], { base: './'})
             .pipe(gulp.dest('dist'));
 });
