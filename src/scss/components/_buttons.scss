@@ -6,20 +6,20 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-  height: 38px;
-  padding: 0 30px;
+  height: $compontent-height;
+  padding: $default-horizontal-padding;
   margin: 2rem 0;
   color: $dark;
   background: $gray;
   text-align: center;
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 600;
-  line-height: 38px;
+  line-height: $compontent-height;
   letter-spacing: .1rem;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  border-radius: 4px;
+  border-radius: $border-radius;
   border: 1px solid transparent;
   cursor: pointer;
   box-sizing: border-box;
