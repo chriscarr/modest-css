@@ -19,7 +19,7 @@ input[type="button"] {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  border-radius: $border-radius;
+  @include border-radius(.5rem);
   border: 1px solid transparent;
   cursor: pointer;
   box-sizing: border-box;

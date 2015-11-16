@@ -13,7 +13,7 @@ select {
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: $white;
   border: 1px solid $gray;
-  border-radius: $border-radius;
+  @include border-radius(.5rem);
   box-shadow: none;
   box-sizing: border-box;
 }
@@ -88,7 +88,8 @@ code {
   white-space: nowrap;
   background: $gray;
   border: 1px solid darken( $gray, 10% );
-  border-radius: 4px; }
+  @include border-radius(.5rem);
+}
 pre > code {
   display: block;
   padding: 1rem 1.5rem;
@@ -99,23 +100,28 @@ th,
 td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid $gray; }
+  border-bottom: 1px solid $gray;
+}
 th:first-child,
 td:first-child {
-  padding-left: 0; }
+  padding-left: 0;
+}
 th:last-child,
 td:last-child {
-  padding-right: 0; }
+  padding-right: 0;
+}
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 input,
 textarea,
 select,
 fieldset {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+}
 pre,
 blockquote,
 dl,
@@ -125,4 +131,32 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2.5rem;
+}
+/*Alerts
+_________________________________________________ */
+.alert {
+  @include border-radius(.5rem);
+  padding: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.success {
+  @extend .message;
+  background: lighten( $green, 20% );
+  color: darken($green, 20%);
+  border-bottom: 3px $green solid;
+}
+.warning {
+  @extend .message;
+  background: lighten( $yellow, 20% );
+  color: darken($yellow, 20%);
+  border-bottom: 3px $yellow solid;
+}
+.error {
+  @extend .message;
+  background: lighten( $red, 20% );
+  color: darken($red, 20%);
+  border-bottom: 3px $red solid;
+}
