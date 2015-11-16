@@ -1,6 +1,7 @@
-@import 'normalize';
+@import 'global/normalize';
 @import 'variables/variables.scss';
-@import 'global';
+@import 'global/global.scss';
 @import 'layout/layout.scss';
 @import 'typography/typography.scss';
 @import 'components/components.scss';
+@import 'components/buttons.scss';
