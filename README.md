@@ -1,5 +1,14 @@
 # modest-css
 
-A simple starter theme using Skeleton CSS and turning it into a SASS build with Gulp.
+Modest-CSS is built from Skeleton CSS and uses some common SASS functionality to deliver a simple, lightweight and highly customizable framework.
 
-Run gulp as the default task to compile sass and "gulp watch" for changes/reload on change.
+This framework is a great starting point for a project which doesn't need more then the most commonly styled HTML elements.
+
+<ul>
+  <li>Download the latest release.</li>
+  <li>Clone the repo: git clone</li>
+  <li>Install npm</li>
+  <li>Install bower</li>
+  <li>Run gulp to build the assets</li>
+  <li>Run gulp watch to launch a brower-sync session</li>
+</ul>

@@ -10,7 +10,6 @@ imagemin = require ('gulp-imagemin'),
     sass = require('gulp-sass'),
     maps = require('gulp-sourcemaps'),
     plumber = require('gulp-plumber'),
-    marked = require('marked'),
      del = require('del');
 
 

@@ -24,9 +24,24 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 }
 
 p {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
-
+.lead {
+  margin-bottom: 22px;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 33px;
+}
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 22px;
+  border-left: 5px solid #eee;
+  margin-bottom: 14px;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 32.5px;
+}
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
